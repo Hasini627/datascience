@@ -75,3 +75,22 @@ plt.figure(figsize=(12, 8))
 plot_tree(clf, feature_names=X.columns, class_names=["No Purchase", "Purchase"],
           filled=True, rounded=True)
 plt.show()
+
+# -------------------------------
+# Step 7: Visualize Decision Tree (Super Simplified)
+# -------------------------------
+plt.figure(figsize=(12, 8))
+plot_tree(
+    clf,
+    feature_names=X.columns,
+    class_names=["No Purchase", "Purchase"],
+    filled=True, 
+    rounded=True,
+    impurity=False,   # hide entropy/impurity
+    proportion=False, # show only majority class, not percentages
+    precision=0       # round thresholds (no decimals)
+)
+plt.title("Simplified Decision Tree - Customer Purchase Prediction", fontsize=14)
+plt.show()
+
+
